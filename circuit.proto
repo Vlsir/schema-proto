@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 
-package bigspicy;
+package vlsir;
 
 /// Package - A Collection of Circuit-Modules
 message Package {
