@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package vlsir.pdk;
+
+message PDK {
+  // TODO: How are PDKs named?
+  // S130, Sky130, sky130_fd_sc_hd vs sk130_fd_sc_hs, etc.
+  // Does this include the variant?
+  string name = 1;
+
+  string variant = 11;
+
+  repeated LayerInfo layers = 101;
+}
+
+// Layers in PDKs roughly correspond to physical layers in the semiconductor
+// fabrication process. In this schema, a "layer" is a pair: first, some major
+// layer (like "the first metal layer") and second, some sub-index into that
+// layer distinguishing the various purposes objects serve on the major layor.
+message LayerInfo {
+  // A canonical shorthand name for the layer, e.g. "met1".
+  string name = 1;
+
+  // Here you might put other variations of the layer name for different
+  // programs, e.g. whatever magic should call the layer.
+
+  // Short-hand description of the purpose of the sub-layer, e.g. "drawing".
+  string purpose = 11;
+
+  // An integer index identifying the major layer.
+  uint64 index = 21;
+
+  // An integer index identifying the sub layer, or purpose.
+  uint64 sub_index = 31;
+}
