@@ -1,16 +1,21 @@
 syntax = "proto3";
 
-package vlsir.pdk;
+package vlsir.tech;
 
-message PDK {
-  // TODO: How are PDKs named?
-  // S130, Sky130, sky130_fd_sc_hd vs sk130_fd_sc_hs, etc.
-  // Does this include the variant?
+message Technology {
+  // Skywater130, S130, Sky130, etc
   string name = 1;
-
-  string variant = 11;
+  
+  Package package = 11;
 
   repeated LayerInfo layers = 101;
+}
+
+message Package {
+  // sky130_fd_sc_hd, sk130_fd_sc_hs, etc
+  string name = 1;
+  
+  // 
 }
 
 // Layers in PDKs roughly correspond to physical layers in the semiconductor
