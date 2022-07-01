@@ -6,7 +6,7 @@ message Technology {
   // Skywater130, S130, Sky130, etc
   string name = 1;
   
-  Package package = 11;
+  repeated Package packages = 11;
 
   repeated LayerInfo layers = 101;
 }
