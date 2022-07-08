@@ -131,11 +131,11 @@ message Abstract {
   // Cell Name
   string name = 1;
   // Outline
-  vlsir.raw.Polygon outline = 2;
+  Polygon outline = 2;
   // Ports 
   repeated AbstractPort ports = 4;
   // Blockages
-  repeated vlsir.raw.LayerShapes blockages = 5;
+  repeated LayerShapes blockages = 5;
 }
 
 // # Abstract Port
@@ -144,7 +144,7 @@ message AbstractPort {
   // Port Name
   string net = 1;
   // Shapes, grouped by layer 
-  repeated vlsir.raw.LayerShapes shapes = 2; 
+  repeated LayerShapes shapes = 2; 
 }
 
 // # Cell 
