@@ -9,6 +9,10 @@ message Technology {
   repeated Package packages = 11;
 
   repeated LayerInfo layers = 101;
+
+  // When writing logic net labels for shapes in other formats (GDS), write
+  // them as the following layer sub-index (GDS data type):
+  string label_sub_index = 102;
 }
 
 message Package {
