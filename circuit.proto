@@ -116,6 +116,8 @@ message ExternalModule {
   // Port Definitions
   // Ordered as they will be in order-sensitive formats, such as typical netlist formats. 
   repeated Port ports = 3;
+  // Signal Definitions, limited to those used by external-facing ports.
+  repeated Signal signals = 4;
   // Params
   repeated vlsir.utils.Param parameters = 5;
 }
