@@ -6,7 +6,7 @@ The data format is actually defined by [Google Protocol Buffers](https://develop
 
 The schema is defined by the .proto files here-in *and* surrounding commentary. Please read the documentation thoroughly. (lol -ed)
 
-Reference implementations for some languages exist in [VlsirTools](go/here).
+Reference implementations for some languages exist in [VlsirTools](https://github.com/Vlsir/Vlsir).
 
 ## Usage
 
