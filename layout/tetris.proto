@@ -8,7 +8,7 @@ syntax = "proto3";
 package vlsir.tetris;
 
 import "utils.proto";
-import "raw.proto";
+import "layout/raw.proto";
 import "circuit.proto";
 
 
