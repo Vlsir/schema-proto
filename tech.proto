@@ -9,8 +9,6 @@ message Technology {
   repeated Package packages = 11;
 
   repeated LayerInfo layers = 101;
-
-  string label_sub_index = 102;
 }
 
 message Package {
@@ -31,7 +29,7 @@ enum LayerPurposeType {
 
 message LayerPurpose {
   // Short-hand description of the purpose of the sub-layer, e.g. "drawing".
-  string purpose = 1;
+  string description = 1;
   
   LayerPurposeType type  = 2;
 }
