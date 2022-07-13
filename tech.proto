@@ -10,16 +10,30 @@ message Technology {
 
   repeated LayerInfo layers = 101;
 
-  // When writing logic net labels for shapes in other formats (GDS), write
-  // them as the following layer sub-index (GDS data type):
   string label_sub_index = 102;
 }
 
 message Package {
   // sky130_fd_sc_hd, sk130_fd_sc_hs, etc
   string name = 1;
+
+  // Other package-specific stuff goes here.
+}
+
+enum LayerPurposeType {
+  UNKNOWN = 0;
+  LABEL = 1;  // Layers identified as LABEL will be used to attach net labels.
+  DRAWING = 2;
+  PIN = 3;
+  OBSTRUCTION = 4;
+  OUTLINE = 5;
+}
+
+message LayerPurpose {
+  // Short-hand description of the purpose of the sub-layer, e.g. "drawing".
+  string purpose = 1;
   
-  // 
+  LayerPurposeType type  = 2;
 }
 
 // Layers in PDKs roughly correspond to physical layers in the semiconductor
@@ -33,8 +47,7 @@ message LayerInfo {
   // Here you might put other variations of the layer name for different
   // programs, e.g. whatever magic should call the layer.
 
-  // Short-hand description of the purpose of the sub-layer, e.g. "drawing".
-  string purpose = 11;
+  LayerPurpose purpose = 11;
 
   // An integer index identifying the major layer.
   uint64 index = 21;
